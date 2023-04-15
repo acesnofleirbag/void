@@ -1,4 +1,4 @@
-Timeline
+Base Awareness
 -------
 
 - logic gates
@@ -11,10 +11,12 @@ Timeline
 
     * The instruction i++ otherwise ++i use one more instruction on generated assembly code, for a simple increment
       outside a for block for instance. Inside a for block the generated asm were the same
-    
+    * Syscall numbers can be found on '/usr/include/asm/unistd.h'
+
+- executable file type
 - compiler
 - cross compiler
-
+- debuggers
 
 Questions & Answers
 -------
