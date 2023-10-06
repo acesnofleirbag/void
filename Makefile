@@ -1,7 +1,7 @@
 BIN = void
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -pedantic -std=c99
-DEBUG = 1
+DEBUG = 0
 KERNEL_SRC := $(wildcard src/*.c)
 KERNEL_OBJ := $(patsubst %.c, %.o, $(KERNEL_SRC))
 OUTDIR = build
@@ -58,3 +58,7 @@ OBJ = $(shell find src -type f -iname '*.h' -or -iname '*.c')
 lint: $(OBJ)
 	@clang-format -style=file -i $(OBJ)
 	@echo "reformatted successfully"
+
+.PHONY: run
+run:
+	qemu-system-i386 -machine q35 -fda build/void_0_0_0.img -gdb tcp::26000 -S

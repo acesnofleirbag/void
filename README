@@ -1,2 +1,20 @@
 VOID
 =======
+
+How To Run
+-------
+
+**NECESSARY: to clone hdbg and spark (bootloader) on the contrib folder**
+
+$ make build
+$ make bootdisk
+$ gdb
+
+Inside gdb REPL
+
+- set architecture i8086
+- target remote localhost:26000
+- b *0x7c00
+- layout asm
+- layout reg
+- c
